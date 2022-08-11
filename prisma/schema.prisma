@@ -20,13 +20,5 @@ hash String @unique
 
 firstName String?
 lastName String?
-}
-
-model Bikes {
-id Int @id @default(autoincrement())
-createdAt DateTime @default(now())
-updatedAt DateTime @updatedAt
-name String?
-price Int?
 
 }
