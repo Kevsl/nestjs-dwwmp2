@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { AuthDto } from './dto';
+import * as argon from 'argon2';
+import { JwtService } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
-  register() {
-    return { msg: 'Registration successfull' };
+  async register(dto: AuthDto) {
+    const hash = await argon.hash(dto.password);
   }
 
   login() {
